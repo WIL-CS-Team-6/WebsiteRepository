@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 500px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 500px;
+}
+/*Style sheet for the naviagtion bar at the top*/
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #808080;
+  color: white;
+}
+
+</style>
+</head>
+<body>
+
+  <div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#CheckList">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="/">Library</a>
+</div>
+
+<h2>Vertical Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openMenu(event, 'Library Orientation')" id="defaultOpen">Library Orientation</button>
+  <button class="tablinks" onclick="openMenu(event, 'Library Pin')">Library Pin</button>
+  <button class="tablinks" onclick="openMenu(event, 'Finding and borrowing books')">Finding and borrowing books</button>
+  <button class="tablinks" onclick="openMenu(event, 'Logging onto Computers and Printing')">Logging onto Computers and Printing</button>
+  <button class="tablinks" onclick="openMenu(event, 'Book a Study Space')">Book a Study Space</button>
+  <button class="tablinks" onclick="openMenu(event, 'Library places and spaces')">Library places and places</button>
+  <button class="tablinks" onclick="openMenu(event, 'Getting help')">Getting help</button>
+</div>
+
+<!--content that will be in each tab/button-->
+<div id="Library Orientation" class="tabcontent">
+  <h3>Library Orientation</h3>
+  <p>this will just have the introduction about the university library and what you need to know before you can come at the library.</p>
+</div>
+<div id="Library Pin" class="tabcontent">
+  <h3>Library Pin</h3>
+  <p>what the pin is used for.<br>Why you need the pin.<br>How you get the pin</p> 
+</div>
+<div id="Finding and borrowing books" class="tabcontent">
+  <h3>Finding and borrowing books</h3>
+  <p>The is going to be a linked video with a tutorial on how to borrow books mainly form the main campus which callaghan.<br>A step by step instructions on what to do, what you need, what those numbers at the back of the mean, and how to find the book.<br>Returning & renewing books at home or at uni</p>
+</div>
+<div id="Logging onto Computers and Printing" class="tabcontent">
+  <h3>Logging onto Computers and Printing</h3>
+  <p>How to get your log in details. <br> Why you need the log in details.<br> how to use the printing facilities.</p>
+</div>
+<div id="Book a Study Space" class="tabcontent">
+  <h3>Book a Study Space</h3>
+  <p>Different study spaces at the library.<br> Why you need to book a space.<br>How to book a space</p> 
+</div>
+<div id="Library places and spaces" class="tabcontent">
+  <h3>Library places and spaces</h3>
+  <p>The University of Newcastle provides library services at six campuses that are listed below and a number of PARTNER LIBRARIES (RESTRICTED ACCESS CHECK WEBSITE FOR MORE INFORMTION).<br>Achmuty, Ourimba and NUspace libraries all have 24 hour study spaces available.</p>
+
+  <h4>Achmuty</h4>
+  <li>Newcastle campus (Callaghan)<br>
+University Drive<br>
+Callaghan NSW 2308<br></li>
+  <p>The Auchmuty Library is located on the western side of the campus near Shortland Union.<br></p>
+
+<h4>Newcastle City Campus</h4>
+  <li>Newcastle City campus Library
+Level 1, NUspace building<br>
+409 Hunter St<br></li>
+<p>The Library is located on Level 1 of the NUspace building.</p>
+
+<h4>Huxley Library</h4>
+<li>Newcastle campus (Callaghan)<br>
+University Drive<br>
+Callaghan NSW 2308<br></li>
+<p>The Huxley Library is located on Levels A and C of the Hunter Building.</p>
+
+<h4>Ourimbah Campus</h4>
+<li>Central Coast campus (Ourimbah)<br>
+10 Chittaway Road<br>
+Ourimbah NSW 2258<br></li>
+<p>The Ourimbah Library is located on the main quadrangle.<br></p>
+
+  <p>  How to get there.<br>Opening hours</p>
+</div>
+<div id="Getting help" class="tabcontent">
+  <h3>Getting help</h3>
+  <p>Who to talk to when you need help.<br>Contact details.<br>Booking a librarian</p>
+</div>
+
+<script>
+function openMenu(evt, libraryMenu) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(libraryMenu).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
